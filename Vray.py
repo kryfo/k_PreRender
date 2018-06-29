@@ -16,3 +16,17 @@ def main(*args):
         if i.hasAttr("sys_max_threads"):
             i.sys_max_threads.set(30)
             PRE_BASE.log_scene_set("sys_max_threads","30")
+            
+    #设置最大内存使用
+    for i in pm.ls(type="VRaySettingsNode"):
+        if i.hasAttr("srdml"):
+            org_srdml = i.srdml.get()
+            print "Your scens originalvray srdml is %s " % (org_srdml)
+            if "vrayformaya" in info_dict["plugins"]:
+                print type(info_dict["plugins"]["vrayformaya"])
+                if info_dict["plugins"]["vrayformaya"] >= "3.10":
+                    print "Your task vray version >= 3.10,set srdml to 0 "
+                    i.srdml.set(0)
+                else:
+                    i.srdml.set(20480)
+                    print "Your vray version lower than  3.10.01,set srdml to 20480MB"
