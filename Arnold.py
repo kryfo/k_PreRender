@@ -24,9 +24,11 @@ def main(*args):
         #报错停止渲染
         if i.hasAttr("abortOnError"):
             i.abortOnError.set(0)
+            print ('abortOnError is %s') %i.abortOnError.get()
         #日志级别
         if i.hasAttr("log_verbosity"):
             i.log_verbosity.set(1)
+            print ('log_verbosity is %s') %i.log_verbosity.get()
 
         if i.hasAttr("autotx"):
             i.autotx.set(False)
