@@ -9,6 +9,15 @@ from PreRender import PreRenderBase as CLASS_PRE_BASE
 
 
 def main(*args):
+    print ("custome prerender  start ----------- ")
+    info_dict = args[0]
+    print (info_dict) #prerender  info   dict
+    print (info_dict["user_id"]) #int
+    print (info_dict["start"])   #int
+    print (info_dict["mapping"]) #dict
+    print (info_dict["task_id"])  #int
+    print (info_dict["plugins"])  #dict
+    print (info_dict["rendersetting"]) #dict
 
     PRE_BASE = CLASS_PRE_BASE()
 
