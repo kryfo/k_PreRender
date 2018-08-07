@@ -9,6 +9,17 @@ import time
 
 
 def main(*args):
+    print ("custome prerender  start ----------- ")
+    info_dict = args[0]
+    print (info_dict) #prerender  info   dict
+    print (info_dict["user_id"]) #int
+    print (info_dict["start"])   #int
+    print (info_dict["mapping"]) #dict
+    print (info_dict["task_id"])  #int
+    print (info_dict["plugins"])  #dict
+    print (info_dict["rendersetting"]) #dict
+
+    
     #关动力学
     mel.eval("putenv(\"MAYA_DISABLE_BATCH_RUNUP\",\"1\"); global proc dynRunupForBatchRender() {}; ")
     print ("Set MAYA_DISABLE_BATCH_RUNUP = 1 ")
@@ -28,3 +39,6 @@ def main(*args):
     print int(start)
     cmds.currentTime(int(start)-1,edit=True)
     print "update frame"
+
+    #切换渲染层
+    mel.eval("fixRenderLayerOutAdjustmentErrors")
