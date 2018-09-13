@@ -52,8 +52,8 @@ def doConfigSetup(*args):
     os.system ("robocopy /s  %s %s" % (srcDir1, dstDir1))
     #启动指定进程
     os.system(r'start C:/AMPED/rlm.exe')
-
-
+    #
+    evalDeferred("autoLoadPlugin(\"\", \"lookdevKit\", \"lookdevKit\")");
 
 def set_env(env,val):
     """添加环境变量的函数"""

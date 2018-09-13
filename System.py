@@ -26,19 +26,11 @@ def main(*args):
 
     #设置当前帧 (对一些毛发没有跟随物体动的,而开场景却是动的)
     info_dict = args[0]
-    
-    # print (info_dict["user_id"]) #int
-    # print (info_dict["start"])   #int
-    # print (info_dict["mapping"]) #dict
-    # print (info_dict["task_id"])  #int
-    # print (info_dict["plugins"])  #dict
-    # print (info_dict["rendersetting"]) #dict
-
 
     start = info_dict["start"]
-    print int(start)
+    print (int(start))
     cmds.currentTime(int(start)-1,edit=True)
-    print "update frame"
+    print ("update frame")
 
     #切换渲染层
     mel.eval("fixRenderLayerOutAdjustmentErrors")
